@@ -1,0 +1,18 @@
+{
+  "name": "angularjs-percent-directive-sample",
+  "version": "0.0.1",
+  "description": "Simple sample demonstrating and testing a percentage directive in AngularJs (v1)",
+  "private": true,
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server ./app -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James O'Cull",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.8.2",
+    "http-server": "^0.10.0"
+  }
+}
