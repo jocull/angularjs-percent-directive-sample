@@ -1,24 +1,76 @@
 <!doctype html>
 <html ng-app="percentApp">
 <head>
+  <title>Percentage directive form test</title>
   <script src="/bower_components/angular/angular.min.js"></script>
   <script src="app.module.js"></script>
+  <style type="text/css">
+    label {
+      font-weight: bold;
+    }
+    input.ng-invalid.ng-touched {
+      background-color: #f00;
+    }
+    input.ng-valid.ng-touched {
+      background-color: #0f0;
+    }
+    pre {
+      display: inline;
+    }
+    .buffer {
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
   <div ng-controller="PercentController">
-    <div>
-      <input type="text" ng-model="percent" placeholder="Enter a number 0 - 1..." />
-    </div>
-    <div>
-      Current number value: {{percent | number}}
-    </div>
-    <div>
-        As an element:
-        <percent value="percent"></percent>
-    </div>
-    <div>
-      As an attribute:
-      <span percent value="percent"></span>
+    <h2>Percentage directive form test</h2>
+    <form name="form" action="/submit.html" method="GET" ng-submit="submitForm(form.$valid)" novalidate>
+      <div>
+        <label>Enter a percentage:</label>
+        <!--
+          This input would make more sense as a `number` type,
+          but I left it as `text` to show that the validation works.
+         -->
+        <input type="text" name="percent" ng-model="percent" placeholder="Enter a number 0 - 1..." percent />
+        <p ng-show="form.percent.$invalid && !form.percent.$pristine">Percent values must be between 0 and 1.</p>
+        <p ng-show="!form.percent.$invalid && !form.percent.$pristine">That's valid! Value: <percent value="percent"></percent></p>
+      </div>
+      <div>
+        <button type="submit" ng-disabled="form.$invalid">Submit it</button>
+      </div>
+    </form>
+
+    <hr/>
+
+    <div class="buffer">
+      <h2>Debug / Output views</h2>
+      <div class="buffer">
+        <label>
+          Current number value: {{percent | number}}
+        </label>
+      </div>
+      <div class="buffer">
+        Form state: {{valid}}
+      </div>
+      <div class="buffer">
+        <label>
+          Displayed as an element like
+          <pre>&lt;percent ...&gt;</pre>:
+        </label>
+        <div>
+          <percent value="percent"></percent>
+        </div>
+      </div>
+      <div class="buffer">
+        <label>
+          Displayed as an attribute like
+          <pre>&lt;span percent ...&gt;</pre>:
+        </label>
+        <div>
+          <span percent value="percent"></span>
+        </div>
+      </div>
     </div>
   </div>
 </body>
