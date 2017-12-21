@@ -1,7 +1,7 @@
 {
   "name": "angularjs-percent-directive-sample",
   "version": "0.0.1",
-  "description": "Simple sample demonstrating and testing a percentage directive in AngularJs (v1)",
+  "description": "Simple sample demonstrating and testing a percentage directive in AngularJS (1.x)",
   "private": true,
   "scripts": {
     "postinstall": "bower install",
@@ -9,6 +9,10 @@
     "start": "http-server ./app -c-1",
     "pretest": "npm install",
     "test": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jocull/angularjs-percent-directive-sample.git"
   },
   "author": "James O'Cull",
   "license": "ISC",

@@ -1,10 +1,10 @@
 {
   "name": "angularjs-percent-directive-sample",
-  "description": "Simple sample demonstrating and testing a percentage directive in AngularJs (v1)",
+  "description": "Simple sample demonstrating and testing a percentage directive in AngularJS (1.x)",
   "authors": [
     "James O'Cull"
   ],
-  "license": "MIT",
+  "license": "ISC",
   "private": true,
   "dependencies": {
     "angular": "^1.6.7",
