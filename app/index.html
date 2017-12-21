@@ -1,15 +1,25 @@
 <!doctype html>
-<html ng-app>
+<html ng-app="percentApp">
 <head>
   <script src="/bower_components/angular/angular.min.js"></script>
+  <script src="app.module.js"></script>
 </head>
 <body>
-  <div>
-    <label style="font-weight: bold;">Name:</label>
-    <input type="text" ng-model="name" placeholder="What's your name?" />
-  </div>
-  <div ng-if="name">
-    <h1>Hello, {{name}}!</h1>
+  <div ng-controller="PercentController">
+    <div>
+      <input type="text" ng-model="percent" placeholder="Enter a number 0 - 1..." />
+    </div>
+    <div>
+      Current number value: {{percent | number}}
+    </div>
+    <div>
+        As an element:
+        <percent value="percent"></percent>
+    </div>
+    <div>
+      As an attribute:
+      <span percent value="percent"></span>
+    </div>
   </div>
 </body>
 </html>
