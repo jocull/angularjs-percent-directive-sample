@@ -6,6 +6,12 @@
 - Displays to the user as a percentage (from 0 – 100)
 - Would be marked invalid if below 0 or above 100
 
+## Requirements for setup
+
+- Git
+- Node.js (but probably not an ancient version)
+- npm
+
 ## Running the application
 
 ```
